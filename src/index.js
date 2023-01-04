@@ -122,7 +122,7 @@ function updateScore() {
 * This function clears the score by setting `points = 0`. 
 *
 */
-function clearScore(points) {
+function clearScore() {
   points = 0;
   score.textContent = points;  
   return points;
@@ -162,7 +162,7 @@ function whack() {
   updateScore();
   audioHit.currentTime = 0;
   audioHit.play(); 
-  
+  return points;
 }
 
 
@@ -242,3 +242,4 @@ window.time = time;
 window.setDuration = setDuration;
 window.toggleVisibility = toggleVisibility;
 window.setEventListeners = setEventListeners;
+
