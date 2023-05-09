@@ -134,9 +134,12 @@ function gameOver() {
  
   if (time > 0) {
   timeoutID = showUp();
+  
   return timeoutID;}
-  else{
+  else {
+    audioStart.pause();
    let gameStopped = stopGame();
+   
     return gameStopped;}
 }
 
@@ -152,12 +155,11 @@ function startGame(){
   clearScore();  
   setDuration(10);       
   startTimer();
-  //audioStart.currentTime = 1.5;
-  //audioStart.play();
-  //audioStart.volume = 0.3;
+  audioStart.currentTime = 1.5;
+  audioStart.play();
+  audioStart.volume = 0.2;
   setEventListeners();
-  
-  
+    
 return "game started";
 }
 
@@ -207,8 +209,8 @@ function clearScore() {
 function whack() { 
   // TODO: Write your code here.
   updateScore();
-  //audioHit.currentTime = 0;
-  //audioHit.play(); 
+  audioHit.currentTime = 0;
+  audioHit.play(); 
   return points;
 }
 
@@ -271,9 +273,9 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-  //stopAudio(song);  //optional
-  //audioStart.pause();
-  //audioStart.currentTime = 0;  
+  stopAudio(song);  //optional
+  audioStart.pause();
+  audioStart.currentTime = 0;  
   clearInterval(timer);
     return "game stopped";
 }

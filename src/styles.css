@@ -58,6 +58,8 @@ h2 {
   cursor: url('../assets/mallet.png'), pointer;
   margin-bottom: 100px;
   justify-content:fill;
+  padding-bottom: 100px;
+  
 }
 
 .hole {
